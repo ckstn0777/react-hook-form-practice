@@ -1,4 +1,5 @@
 import App from "./App";
+import ReactForm from "./pages/ReactForm";
 import ReactHookFormBasic from "./pages/ReactHookFormBasic";
 
 export const routes = [
@@ -8,7 +9,7 @@ export const routes = [
   },
   {
     path: "/react-form",
-    element: <ReactHookFormBasic />,
+    element: <ReactForm />,
     title: "React Form",
     description: "React Form 기본 사용법",
   },
