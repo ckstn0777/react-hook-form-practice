@@ -3,7 +3,9 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
 import { routes } from "./router";
 
-const router = createBrowserRouter(routes, { basename: "/react-hook-form" });
+const router = createBrowserRouter(routes, {
+  basename: "/react-hook-form-practice",
+});
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <RouterProvider router={router} />
