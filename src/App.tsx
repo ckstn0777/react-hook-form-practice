@@ -14,7 +14,10 @@ function App() {
               key={i}
               className="text-[#7b68ee] border border-[#7b68ee] bg-[#f0f8ff] flex rounded-lg px-10 py-10"
             >
-              <a href={`/react-hook-form${route.path}`} className="main-card">
+              <a
+                href={`/react-hook-form-practice${route.path}`}
+                className="main-card"
+              >
                 <h2 className="text-2xl font-bold mt-2 mb-6">{route.title}</h2>
                 <span className="main-card-title">{route.description}</span>
               </a>
