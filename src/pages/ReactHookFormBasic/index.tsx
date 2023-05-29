@@ -3,7 +3,11 @@ import { useForm } from "react-hook-form";
 let counter = 0;
 
 export default function ReactHookFormBasic() {
-  const { register, handleSubmit } = useForm();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
   const onSubmit = (data: any) => alert(JSON.stringify(data));
 
   return (
@@ -25,9 +29,15 @@ export default function ReactHookFormBasic() {
           </div>
 
           <input
-            {...register("firstName")}
+            {...register("firstName", { required: true })}
             className="px-4 py-2 border border-[#eaecee] rounded-[6px] focus:border-[#535961]"
           />
+
+          {errors.firstName && (
+            <span className="text-[#e50000] ml-1 text-sm">
+              x This field is required
+            </span>
+          )}
         </label>
         <label className="flex flex-col">
           <div className="mb-1 flex text-sm">
@@ -35,9 +45,14 @@ export default function ReactHookFormBasic() {
             <span className="text-[#e50000] ml-1">*</span>
           </div>
           <input
-            {...register("lastName")}
+            {...register("lastName", { required: true })}
             className="px-4 py-2 border border-[#eaecee] rounded-[6px] focus:border-[#535961]"
           />
+          {errors.lastName && (
+            <span className="text-[#e50000] ml-1 text-sm">
+              x This field is required
+            </span>
+          )}
         </label>
 
         <button
